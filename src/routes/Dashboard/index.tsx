@@ -1,3 +1,9 @@
+import UserHealthInfo from './UserHealthInfo'
+
 export const Dashboard = () => {
-  return <div />
+  return (
+    <div>
+      <UserHealthInfo />
+    </div>
+  )
 }
