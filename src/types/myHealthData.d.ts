@@ -2,7 +2,7 @@ import { IHealthTagList } from './types.d'
 
 export interface IMyHealthData {
   title: string
-  myData: string
+  res: string
   postfix: string
   boldString: string
   unit: string
