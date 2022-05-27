@@ -1,4 +1,18 @@
+import cx from 'classnames'
+
+import {
+  AlcoholIcon,
+  BloodPressureIcon,
+  BloodSugarIcon,
+  BMIIcon,
+  CholesterolIcon,
+  ExerciseIcon,
+  GFRIcon,
+  SmokeIcon,
+} from 'assets/svgs'
 import { IMyHealthData } from 'types/myHealthData'
+
+import styles from './myHealthItem.module.scss'
 
 const MyHealthItem = ({ index, item }: { index: number; item: IMyHealthData }) => {
   const {
@@ -12,28 +26,67 @@ const MyHealthItem = ({ index, item }: { index: number; item: IMyHealthData }) =
     detail,
   } = item
 
+  const svgIcon = {
+    체질량지수: <BMIIcon />,
+    혈압: <BloodPressureIcon />,
+    총콜레스테롤: <CholesterolIcon />,
+    흡연: <SmokeIcon />,
+    식전혈당: <BloodSugarIcon />,
+    음주: <AlcoholIcon />,
+    신사구체여과율: <GFRIcon />,
+    운동량: <ExerciseIcon />,
+  }[title]
+
+  const colorTheme = {
+    체질량지수: styles.themeBMI,
+    혈압: styles.themeBloodPressure,
+    총콜레스테롤: styles.themeCholesterol,
+    흡연: styles.themeSmoke,
+    식전혈당: styles.themeBloodSugar,
+    음주: styles.themeAlcohol,
+    신사구체여과율: styles.themeGFR,
+    운동량: styles.themeExercise,
+  }[title]
+
+  const detailSub = detail.split(' - ')
+
+  const summary = boldString ? (
+    <>
+      <p className={styles.summaryTop}>
+        {title}
+        {postfix} {res}
+        {unit}로
+        <br />
+        <strong>{boldString}</strong>입니다.
+      </p>
+      <div className={styles.summaryBottom}>정상: {normalData}</div>
+    </>
+  ) : (
+    <p className={styles.summaryTop}>{postfix}</p>
+  )
+
   return (
-    <li key={`health-${title}`} style={{ border: '1px solid pink', padding: '20px' }}>
-      <div>
-        <div style={{ display: 'flex' }}>
-          <div>{`0${index}`}</div>
-          {/* 매 아이템마다 불러와야 하는 파일이 달라 부득이하게 컴포넌트화하지 않고 불러왔습니다ㅠ */}
-          <img src={`./ic-icon-mission-h-${index}.svg`} alt={title} />
+    <li key={`health-${title}`} className={styles.myHealthItemWrapper}>
+      <div className={styles.myHealthItemTop}>
+        <div className={styles.topIconSectionTop}>
+          <h3>{`0${index}`}</h3>
+          {svgIcon}
         </div>
-        <h5>{title}</h5>
-        <p>{boldString ? `${title}${postfix} ${res}${unit}로 ${boldString}입니다.` : postfix}</p>
-        <div>{boldString && `정상: ${normalData}`}</div>
-        <div style={{ display: 'flex', gap: '8px' }}>
-          <div>{tag1}</div>
-          <div>{tag2}</div>
-          <div>{tag3}</div>
+        <h4 className={colorTheme}>{title}</h4>
+        {summary}
+        <div className={styles.tagContainer}>
+          <div>#{tag1}</div>
+          {tag2 && <div>#{tag2}</div>}
+          {tag3 && <div>#{tag3}</div>}
         </div>
-        <hr />
       </div>
-      <div>
-        <h6>이렇게 관리해 보세요!</h6>
-        <p>{detail.split(' - ')[1]}</p>
-        <p>{detail.split(' - ')[2]}</p>
+      <hr />
+      <div className={styles.myHealthItemBottom}>
+        <h3 className={colorTheme}>이렇게 관리해 보세요!</h3>
+        <ul>
+          {detailSub[1] && <li>{detailSub[1]}</li>}
+          {detailSub[2] && <li>{detailSub[2]}</li>}
+        </ul>
       </div>
     </li>
   )
