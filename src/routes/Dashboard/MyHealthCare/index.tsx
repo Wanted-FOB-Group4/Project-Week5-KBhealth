@@ -1,6 +1,9 @@
+import { useMemo } from 'react'
 import { useRecoilValue } from 'recoil'
+
 import { healthDataState } from 'states/healthDataState'
 import { useParseMyHealthData } from 'hooks'
+import MyHealthItem from './MyHealthItem'
 
 const MyHealthCare = () => {
   const { myData } = useParseMyHealthData()
@@ -8,6 +11,17 @@ const MyHealthCare = () => {
   const {
     wxcResultMap: { wMymaxHscore },
   } = healthData
+
+  const MyHealthList = useMemo(
+    () => (
+      <ul>
+        {myData.map((item, index) => (
+          <MyHealthItem key={`health-${item.title}`} index={index + 1} item={item} />
+        ))}
+      </ul>
+    ),
+    [myData]
+  )
 
   return (
     <div>
@@ -19,42 +33,7 @@ const MyHealthCare = () => {
           건강점수를 최대 {wMymaxHscore}점까지 올릴 수 있어요.
         </p>
       </div>
-      <ul>
-        {myData.map((item, index) => {
-          const {
-            title,
-            res,
-            postfix,
-            unit,
-            boldString,
-            normalData,
-            tag: { tag1, tag2, tag3 },
-            detail,
-          } = item
-
-          return (
-            <li key={`health-${title}`} style={{ border: '1px solid pink', padding: '20px' }}>
-              <div>
-                <div>{`0${index + 1}`}</div>
-                <h5>{title}</h5>
-                <p>{`${title}${postfix} ${res}${unit}로 ${boldString}입니다.`}</p>
-                <div>{`정상: ${normalData}`}</div>
-                <div style={{ display: 'flex', gap: '8px' }}>
-                  <div>{tag1}</div>
-                  <div>{tag2}</div>
-                  <div>{tag3}</div>
-                </div>
-                <hr />
-              </div>
-              <div>
-                <h6>이렇게 관리해 보세요!</h6>
-                <p>{detail.split(' - ')[1]}</p>
-                <p>{detail.split(' - ')[2]}</p>
-              </div>
-            </li>
-          )
-        })}
-      </ul>
+      {MyHealthList}
     </div>
   )
 }
