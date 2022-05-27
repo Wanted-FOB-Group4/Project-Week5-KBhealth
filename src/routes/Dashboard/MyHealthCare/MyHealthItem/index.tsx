@@ -21,8 +21,8 @@ const MyHealthItem = ({ index, item }: { index: number; item: IMyHealthData }) =
           <img src={`./ic-icon-mission-h-${index}.svg`} alt={title} />
         </div>
         <h5>{title}</h5>
-        <p>{`${title}${postfix} ${res}${unit}로 ${boldString}입니다.`}</p>
-        <div>{`정상: ${normalData}`}</div>
+        <p>{boldString ? `${title}${postfix} ${res}${unit}로 ${boldString}입니다.` : postfix}</p>
+        <div>{boldString && `정상: ${normalData}`}</div>
         <div style={{ display: 'flex', gap: '8px' }}>
           <div>{tag1}</div>
           <div>{tag2}</div>
