@@ -12,8 +12,9 @@ const App = () => {
   const setHealthData = useSetRecoilState(healthDataState)
 
   useMount(() => {
-    setUserData(healthDataJSON)
+    setHealthData(healthDataJSON)
   })
+
   return (
     <Routes>
       <Route path='/' element={<Dashboard />} />
