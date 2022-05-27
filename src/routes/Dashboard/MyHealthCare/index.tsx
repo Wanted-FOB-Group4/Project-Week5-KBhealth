@@ -1,23 +1,13 @@
-import { useEffect } from 'react'
 import { useRecoilValue } from 'recoil'
 import { healthDataState } from 'states/healthDataState'
+import { useParseMyHealthData } from 'hooks'
 
 const MyHealthCare = () => {
+  const { myData } = useParseMyHealthData()
   const healthData = useRecoilValue(healthDataState)
-  // 여기서 필요한 데이터를 추출한 것들입니다....
   const {
-    wxcResultMap: {
-      wMymaxHscore,
-      paramMap: { sex, age, resHeight, resBMI },
-      healthScoreList,
-      boj: { resBMI },
-    },
-    healthTagList, // 태그 리스트는 배열이라 각 컴포넌트(?)에 인덱스로 전달해줘야 함, 하지만 다른 애들은 인덱스가 아니라 고유한 이름을 갖고 있어 반드시 순서가 지켜져야 함
+    wxcResultMap: { wMymaxHscore },
   } = healthData
-
-  useEffect(() => {
-    console.log(healthTagList)
-  }, [])
 
   return (
     <div>
@@ -30,13 +20,40 @@ const MyHealthCare = () => {
         </p>
       </div>
       <ul>
-        {healthTagList.map((tag) => (
-          <li key={tag.tagId}>
-            <div>{tag.tag1}</div>
-            <div>{tag.tag2}</div>
-            <div>{tag.tag3}</div>
-          </li>
-        ))}
+        {myData.map((item, index) => {
+          const {
+            title,
+            res,
+            postfix,
+            unit,
+            boldString,
+            normalData,
+            tag: { tag1, tag2, tag3 },
+            detail,
+          } = item
+
+          return (
+            <li key={`health-${title}`} style={{ border: '1px solid pink', padding: '20px' }}>
+              <div>
+                <div>{`0${index + 1}`}</div>
+                <h5>{title}</h5>
+                <p>{`${title}${postfix} ${res}${unit}로 ${boldString}입니다.`}</p>
+                <div>{`정상: ${normalData}`}</div>
+                <div style={{ display: 'flex', gap: '8px' }}>
+                  <div>{tag1}</div>
+                  <div>{tag2}</div>
+                  <div>{tag3}</div>
+                </div>
+                <hr />
+              </div>
+              <div>
+                <h6>이렇게 관리해 보세요!</h6>
+                <p>{detail.split(' - ')[1]}</p>
+                <p>{detail.split(' - ')[2]}</p>
+              </div>
+            </li>
+          )
+        })}
       </ul>
     </div>
   )
