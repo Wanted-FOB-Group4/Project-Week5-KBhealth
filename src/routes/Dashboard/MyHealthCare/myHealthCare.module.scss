@@ -1,16 +1,24 @@
+@use 'styles/constants/colors';
+
 .healthCareHeader {
   padding: 10px 0;
   margin-bottom: 10px;
 
-  h3 {
+  & > h3 {
     margin: 15px 0;
     font-size: 20px;
     font-weight: 700;
+    color: colors.$MYHEALTH_TEXT;
+    letter-spacing: 0.3px;
   }
 
   p {
+    color: colors.$MYHEALTH_TEXT;
+    letter-spacing: 0.3px;
+
     strong {
       font-weight: 700;
+      letter-spacing: 0.3px;
     }
   }
 }

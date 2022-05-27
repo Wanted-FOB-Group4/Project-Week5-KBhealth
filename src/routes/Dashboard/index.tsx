@@ -1,6 +1,7 @@
-import styles from './dashboard.module.scss'
 import DashBoardHeader from './DashboardHeader'
 import MyHealthCare from './MyHealthCare'
+
+import styles from './dashboard.module.scss'
 
 export const Dashboard = () => {
   return (

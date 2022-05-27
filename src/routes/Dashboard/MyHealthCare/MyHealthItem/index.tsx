@@ -1,5 +1,4 @@
-import cx from 'classnames'
-
+import { IMyHealthData } from 'types/myHealthData'
 import {
   AlcoholIcon,
   BloodPressureIcon,
@@ -10,7 +9,6 @@ import {
   GFRIcon,
   SmokeIcon,
 } from 'assets/svgs'
-import { IMyHealthData } from 'types/myHealthData'
 
 import styles from './myHealthItem.module.scss'
 
