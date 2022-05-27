@@ -65,7 +65,7 @@ export const useParseMyHealthData = () => {
         title: '음주',
         myData: healthData.wxcResultMap.paramMap.drnkQty,
         postfix: '1주일간 음주를 하지 않고 있습니다',
-        boldString: '무난한 음주',
+        boldString: '',
         unit: '',
         normalData: '',
         tag: healthData.healthTagList[9],
