@@ -1,9 +1,9 @@
-import styles from './DashBoardHeader.module.scss'
+import styles from './dashboardHeader.module.scss'
 import { BatteryIcon, WifiIcon } from 'assets/svgs'
 
 const DashBoardHeader = () => {
   return (
-    <div className={styles.dashboardHeaderWrapper}>
+    <header className={styles.dashboardHeaderWrapper}>
       <div className={styles.dashboardSection}>
         <span>SKT</span>
         <WifiIcon />
@@ -15,7 +15,7 @@ const DashBoardHeader = () => {
         <span>100%</span>
         <BatteryIcon />
       </div>
-    </div>
+    </header>
   )
 }
 

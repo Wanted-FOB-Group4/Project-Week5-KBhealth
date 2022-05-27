@@ -1,0 +1,23 @@
+@use 'styles/constants/colors';
+@use 'styles/mixins/flexbox';
+
+.dashboardHeaderWrapper {
+  @include flexbox.flexbox(between, center);
+  height: 30px;
+  padding: 0 10px;
+  background-color: colors.$DASHBOARD_HEADER;
+}
+
+.dashboardSection {
+  @include flexbox.flexbox(center, center);
+
+  span {
+    margin: 0 10px;
+    color: colors.$WHITE;
+  }
+
+  svg {
+    width: 20px;
+    fill: colors.$WHITE;
+  }
+}
