@@ -4,6 +4,7 @@ import healthData from 'data/health.json'
 import { NotificationIcon } from 'assets/svgs'
 
 import styles from './userHealthInfo.module.scss'
+import Score from './Score'
 
 const UserHealthInfo = () => {
   const {
@@ -25,6 +26,7 @@ const UserHealthInfo = () => {
         <div className={styles.scoreTitle}>김헬스님의 건강점수</div>
         <NotificationIcon className={styles.icon} />
       </div>
+      <Score score={875} times={10} /> {/* times로 크기 조절 가능 */}
       <div className={styles.checkDate}>{checkDate}</div>
       <button className={styles.updateResultBtn} type='button'>
         건강검진결과 가져오기 &gt;
