@@ -4,6 +4,7 @@ import { useRecoilValue } from 'recoil'
 import { healthDataState } from 'states/healthDataState'
 import { useParseMyHealthData } from 'hooks'
 import MyHealthItem from './MyHealthItem'
+import styles from './myHealthCare.module.scss'
 
 const MyHealthCare = () => {
   const { myData } = useParseMyHealthData()
@@ -24,13 +25,13 @@ const MyHealthCare = () => {
   )
 
   return (
-    <div>
-      <div>
+    <div className={styles.healthCareWrapper}>
+      <div className={styles.healthCareHeader}>
         <h3>맞춤 건강관리</h3>
         <p>
           오케어와 함께 건강을 관리해보세요.
           <br />
-          건강점수를 최대 {wMymaxHscore}점까지 올릴 수 있어요.
+          건강점수를 <strong>최대 {wMymaxHscore}점</strong>까지 올릴 수 있어요.
         </p>
       </div>
       {MyHealthList}
