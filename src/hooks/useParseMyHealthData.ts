@@ -44,7 +44,7 @@ export const useParseMyHealthData = () => {
       {
         title: '흡연',
         res: healthData.wxcResultMap.paramMap.smkQty,
-        postfix: '비흡연 중입니다',
+        postfix: '비흡연 중입니다.',
         boldString: '',
         unit: 'm',
         normalData: '',
@@ -64,7 +64,7 @@ export const useParseMyHealthData = () => {
       {
         title: '음주',
         res: healthData.wxcResultMap.paramMap.drnkQty,
-        postfix: '1주일간 음주를 하지 않고 있습니다',
+        postfix: '1주일간 음주를 하지 않고 있습니다.',
         boldString: '',
         unit: '',
         normalData: '',
@@ -84,7 +84,7 @@ export const useParseMyHealthData = () => {
       {
         title: '운동량',
         res: healthData.wxcResultMap.paramMap.exerciQty,
-        postfix: '1주일간 운동을 하지 않고 있습니다',
+        postfix: '1주일간 운동을 하지 않고 있습니다.',
         boldString: '',
         unit: '',
         normalData: '',
