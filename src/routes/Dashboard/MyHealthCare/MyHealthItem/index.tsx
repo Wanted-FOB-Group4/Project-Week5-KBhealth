@@ -67,10 +67,10 @@ const MyHealthItem = ({ index, item }: { index: number; item: IMyHealthData }) =
     <li key={`health-${title}`} className={styles.myHealthItemWrapper}>
       <div className={styles.myHealthItemTop}>
         <div className={styles.topIconSectionTop}>
-          <h3>{`0${index}`}</h3>
+          <span>{`0${index}`}</span>
           {svgIcon}
         </div>
-        <h4 className={colorTheme}>{title}</h4>
+        <h3 className={colorTheme}>{title}</h3>
         {summary}
         <div className={styles.tagContainer}>
           <div>#{tag1}</div>
@@ -80,7 +80,7 @@ const MyHealthItem = ({ index, item }: { index: number; item: IMyHealthData }) =
       </div>
       <hr />
       <div className={styles.myHealthItemBottom}>
-        <h3 className={colorTheme}>이렇게 관리해 보세요!</h3>
+        <h4 className={colorTheme}>이렇게 관리해 보세요!</h4>
         <ul>
           {detailSub[1] && <li>{detailSub[1]}</li>}
           {detailSub[2] && <li>{detailSub[2]}</li>}

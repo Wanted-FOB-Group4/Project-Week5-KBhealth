@@ -25,14 +25,14 @@
     @include flexbox.flexbox(between, end);
     margin-bottom: 10px;
 
-    h3 {
+    span {
       font-size: 30px;
       font-style: italic;
       font-weight: 700;
     }
   }
 
-  h4 {
+  h3 {
     margin-bottom: 10px;
     font-size: 23px;
     font-weight: 700;
@@ -74,7 +74,7 @@
 }
 
 .myHealthItemBottom {
-  h3 {
+  h4 {
     margin: 30px 0 20px;
     font-weight: 700;
   }
