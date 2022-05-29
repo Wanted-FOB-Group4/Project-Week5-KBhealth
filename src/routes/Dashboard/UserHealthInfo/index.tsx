@@ -27,7 +27,9 @@ const UserHealthInfo = () => {
       <main className={styles.main}>
         <div className={styles.healthScore}>
           <div className={styles.scoreTitle}>
-            <h3>김헬스님의 건강점수</h3>
+            <h3>
+              <b>김헬스</b> 님의 건강점수
+            </h3>
           </div>
           <NotificationIcon className={styles.icon} />
         </div>
