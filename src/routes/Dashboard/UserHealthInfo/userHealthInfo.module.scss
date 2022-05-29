@@ -19,6 +19,7 @@
 
   h2 {
     margin-left: 20px;
+    font-weight: 700;
   }
 }
 
@@ -36,6 +37,12 @@
 
 .scoreTitle {
   width: 100%;
+
+  h3 {
+    b {
+      font-weight: 700;
+    }
+  }
 }
 
 .healthScore {
@@ -43,6 +50,10 @@
   align-items: center;
   justify-content: flex-start;
   width: 100%;
+
+  svg {
+    fill: colors.$GRAY;
+  }
 }
 
 .checkDate {
