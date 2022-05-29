@@ -14,6 +14,7 @@ const App = () => {
   useMount(() => {
     setHealthData(healthDataJSON)
   })
+
   return (
     <Routes>
       <Route path='/' element={<Dashboard />} />
