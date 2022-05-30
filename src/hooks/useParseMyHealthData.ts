@@ -13,7 +13,7 @@ export const useParseMyHealthData = () => {
     setMyData([
       {
         title: '체질량지수',
-        myData: healthData.wxcResultMap.paramMap.resBMI,
+        res: healthData.wxcResultMap.paramMap.resBMI,
         postfix: '는',
         boldString: '과체중',
         unit: 'kg/m²',
@@ -23,7 +23,7 @@ export const useParseMyHealthData = () => {
       },
       {
         title: '혈압',
-        myData: healthData.wxcResultMap.paramMap.resBloodPressure,
+        res: healthData.wxcResultMap.paramMap.resBloodPressure,
         postfix: '은',
         boldString: '정상',
         unit: 'mmHg',
@@ -33,7 +33,7 @@ export const useParseMyHealthData = () => {
       },
       {
         title: '총콜레스테롤',
-        myData: healthData.wxcResultMap.paramMap.resTotalCholesterol,
+        res: healthData.wxcResultMap.paramMap.resTotalCholesterol,
         postfix: '은',
         boldString: '고지혈증',
         unit: 'mg/dL',
@@ -43,8 +43,8 @@ export const useParseMyHealthData = () => {
       },
       {
         title: '흡연',
-        myData: healthData.wxcResultMap.paramMap.smkQty,
-        postfix: '비흡연 중입니다',
+        res: healthData.wxcResultMap.paramMap.smkQty,
+        postfix: '비흡연 중입니다.',
         boldString: '',
         unit: 'm',
         normalData: '',
@@ -53,7 +53,7 @@ export const useParseMyHealthData = () => {
       },
       {
         title: '식전혈당',
-        myData: healthData.wxcResultMap.paramMap.resFastingBloodSuger,
+        res: healthData.wxcResultMap.paramMap.resFastingBloodSuger,
         postfix: '은',
         boldString: '당뇨병전단계',
         unit: 'mg/dL',
@@ -63,8 +63,8 @@ export const useParseMyHealthData = () => {
       },
       {
         title: '음주',
-        myData: healthData.wxcResultMap.paramMap.drnkQty,
-        postfix: '1주일간 음주를 하지 않고 있습니다',
+        res: healthData.wxcResultMap.paramMap.drnkQty,
+        postfix: '1주일간 음주를 하지 않고 있습니다.',
         boldString: '',
         unit: '',
         normalData: '',
@@ -72,24 +72,24 @@ export const useParseMyHealthData = () => {
         detail: healthData.wxcResultMap.boj.drnkQty,
       },
       {
-        title: '운동량',
-        myData: healthData.wxcResultMap.paramMap.exerciQty,
-        postfix: '1주일간 운동을 하지 않고 있습니다',
-        boldString: '',
-        unit: '',
-        normalData: '',
-        tag: healthData.healthTagList[5],
-        detail: healthData.wxcResultMap.boj.exerciQty,
-      },
-      {
         title: '신사구체여과율',
-        myData: healthData.wxcResultMap.paramMap.resGFR,
+        res: healthData.wxcResultMap.paramMap.resGFR,
         postfix: '은',
         boldString: '정상',
         unit: 'mL/min',
         normalData: '60 mL/min 이상',
         tag: healthData.healthTagList[3],
         detail: healthData.wxcResultMap.boj.resGFR,
+      },
+      {
+        title: '운동량',
+        res: healthData.wxcResultMap.paramMap.exerciQty,
+        postfix: '1주일간 운동을 하지 않고 있습니다.',
+        boldString: '',
+        unit: '',
+        normalData: '',
+        tag: healthData.healthTagList[5],
+        detail: healthData.wxcResultMap.boj.exerciQty,
       },
     ])
   }, [healthData])
