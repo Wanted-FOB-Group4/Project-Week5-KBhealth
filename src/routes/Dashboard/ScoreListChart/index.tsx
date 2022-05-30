@@ -4,9 +4,10 @@ import { CallbackArgs } from 'victory-core'
 
 import { healthDataState } from 'states/healthDataState'
 import { getHealthScoreData } from './utils/getHealthScoreData'
-import { getDescription } from './utils/getDescription'
 
+import Description from './Description'
 import { CHART_STYLE } from './chartStyle'
+import styles from './scoreListChart.module.scss'
 
 const ScoreListChart = () => {
   const healthData = useRecoilValue(healthDataState)
@@ -14,11 +15,12 @@ const ScoreListChart = () => {
 
   const data = getHealthScoreData(healthScoreList)
   const ticks = data.map((item) => item.year)
-  const description = getDescription(data)
 
   return (
-    <div>
-      {description}
+    <div className={styles.chartContainer}>
+      <div className={styles.description}>
+        <Description data={data} />
+      </div>
       <VictoryChart {...CHART_STYLE.chart}>
         <VictoryBar
           data={data}
