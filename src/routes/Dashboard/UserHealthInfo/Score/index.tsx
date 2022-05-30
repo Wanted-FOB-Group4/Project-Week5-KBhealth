@@ -14,9 +14,8 @@ const Score = ({ times, score }: IProps) => {
   const dashOffset = ((Math.PI * 2 * 17 * times) / 10) * 5.5
   return (
     <div className='App'>
-      <h1>Hello CodeSandbox</h1>
       <div>
-        <svg version='1.1' baseProfile='full' width={40 * times} height={40 * times} xmlns='http://www.w3.org/2000/svg'>
+        <svg version='1.1' baseProfile='full' width={40 * times} height={30 * times} xmlns='http://www.w3.org/2000/svg'>
           <circle
             cx={20 * times}
             cy={20 * times}
