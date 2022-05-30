@@ -1,67 +1,58 @@
-@use '../../../styles/constants/colors';
+@use 'styles/constants/colors';
+@use 'styles/mixins/flexbox';
 
 .container {
-  display: flex;
+  @include flexbox.flexbox(start, center);
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  width: 100vw;
-  height: 100vh;
-  background-color: #ffd301;
+  width: 100%;
+  background-color: colors.$THEME_COLOR;
 }
 
 .title {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  @include flexbox.flexbox(start, center);
   width: 100%;
   height: 60px;
-
-  h2 {
-    margin-left: 20px;
-    font-weight: 700;
-  }
+  padding: 0 20px;
+  font-weight: 700;
 }
 
 .main {
-  display: flex;
+  @include flexbox.flexbox(start, center);
   flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
   width: 100%;
   height: 100%;
   padding: 20px;
-  background-color: #ffffff;
+  background-color: colors.$WHITE;
   border-radius: 20px 20px 0 0;
-}
 
-.scoreTitle {
-  width: 100%;
+  .checkDate {
+    margin-bottom: 20px;
+    color: colors.$DARKGRAY;
+  }
 
-  h3 {
-    b {
-      font-weight: 700;
-    }
+  .updateResultBtn {
+    margin-bottom: 20px;
+    font-size: 15px;
   }
 }
 
 .healthScore {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  @include flexbox.flexbox(start, center);
   width: 100%;
+  margin-bottom: 20px;
+
+  .scoreTitle {
+    margin-right: 20px;
+
+    strong {
+      font-weight: 700;
+    }
+  }
 
   svg {
+    width: 25px;
     fill: colors.$GRAY;
   }
-}
-
-.checkDate {
-  margin-bottom: 20px;
-}
-
-.updateResultBtn {
-  margin-bottom: 20px;
 }
 
 .userInfoBox {
@@ -70,36 +61,46 @@
   justify-content: space-between;
   width: 100%;
   height: 60px;
-  padding: 20px 10px;
-  background-color: #fff9d9;
+  padding: 20px;
+  background-color: colors.$THEME_LIGHT;
   border-radius: 10px;
-}
 
-.userInfos {
-  display: flex;
-  align-items: center;
-}
-
-.userInfo {
-  &::after {
-    padding: 0 5px;
-    color: colors.$LIGHTGRAY;
-    content: '|';
+  .userInfoTitle {
+    font-weight: 700;
   }
 
-  &:last-child::after {
-    content: '';
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
+
+    li {
+      flex: 1;
+      width: 100px;
+      margin-bottom: 0 !important;
+      text-align: center;
+
+      &:not(&:last-child) {
+        border-right: 2px solid colors.$DARKGRAY;
+      }
+    }
   }
 }
 
 .resultBox {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
+  flex-direction: row;
   width: 100%;
+  padding: 10px;
+  @include flexbox.flexbox(between, center);
 
-  div:first-child {
+  h3 {
     margin: 10px 0;
+    font-weight: 700;
+  }
+
+  button {
+    font-size: 15px;
+    text-decoration: underline;
   }
 }
