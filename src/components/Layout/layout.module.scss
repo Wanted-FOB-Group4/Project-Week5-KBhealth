@@ -1,26 +1,26 @@
 @use 'styles/mixins/flexbox';
 @use 'styles/constants/colors';
 
-.dashboardBackground {
+.layoutBackground {
   width: 100vw;
   height: 100vh;
   @include flexbox.flexbox(center, center);
-  background-color: colors.$DASHBOARD_BG;
+  background-color: colors.$LAYOUT_BG;
 }
 
-.dashboardWrapper {
+.layoutWrapper {
   width: 420px;
   height: 720px;
   background-color: colors.$WHITE;
-  border: 3px solid colors.$DASHBOARD_BORDER;
+  border: 3px solid colors.$LAYOUT_BORDER;
 }
 
-.dashboardMain {
+.layoutMain {
   height: calc(100% - 30px);
   padding: 0 20px;
   overflow-y: scroll;
 
   & > hr {
-    border: 3px solid colors.$DASHBOARD_HR;
+    border: 3px solid colors.$LAYOUT_HR;
   }
 }

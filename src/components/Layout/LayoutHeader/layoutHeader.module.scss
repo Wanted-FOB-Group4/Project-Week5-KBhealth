@@ -1,14 +1,14 @@
 @use 'styles/constants/colors';
 @use 'styles/mixins/flexbox';
 
-.dashboardHeaderWrapper {
+.layoutHeaderWrapper {
   @include flexbox.flexbox(between, center);
   height: 30px;
   padding: 0 10px;
-  background-color: colors.$DASHBOARD_HEADER;
+  background-color: colors.$LAYOUT_HEADER;
 }
 
-.dashboardSection {
+.layoutSection {
   @include flexbox.flexbox(center, center);
 
   span {
