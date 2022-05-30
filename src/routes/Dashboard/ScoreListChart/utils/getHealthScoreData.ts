@@ -12,6 +12,7 @@ export const getHealthScoreData = (healthScoreList: IHealthScoreList[]) => {
       score: Number(SCORE),
       fill: isLastIndex ? COLORS.YELLOW : COLORS.GRAY_E,
       dotFill: isLastIndex ? COLORS.RED : COLORS.GRAY_A,
+      labelFill: isLastIndex ? COLORS.RED : COLORS.LABEL,
     })
 
     return acc

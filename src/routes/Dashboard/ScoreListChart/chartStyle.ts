@@ -1,8 +1,9 @@
 export const COLORS = {
-  GRAY_A: '#a9a9a9',
+  GRAY_A: '#aaaaaa',
   GRAY_E: '#e7e7e7',
-  YELLOW: '#ffc004',
+  YELLOW: '#ffd301',
   RED: '#ff612d',
+  LABEL: '#252525',
 }
 
 export const CHART_STYLE = {

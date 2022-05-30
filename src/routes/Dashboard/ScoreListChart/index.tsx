@@ -1,9 +1,11 @@
 import { useRecoilValue } from 'recoil'
 import { VictoryAxis, VictoryBar, VictoryChart, VictoryLine, VictoryScatter } from 'victory'
+import { CallbackArgs } from 'victory-core'
 
 import { healthDataState } from 'states/healthDataState'
 import { getHealthScoreData } from './utils/getHealthScoreData'
 import { getDescription } from './utils/getDescription'
+
 import { CHART_STYLE } from './chartStyle'
 
 const ScoreListChart = () => {
@@ -23,6 +25,7 @@ const ScoreListChart = () => {
           labels={({ datum }) => datum.score}
           style={{
             data: { fill: ({ datum }) => datum.fill },
+            labels: { fill: ({ datum }: CallbackArgs) => datum.labelFill },
           }}
           {...CHART_STYLE.bar}
         />
