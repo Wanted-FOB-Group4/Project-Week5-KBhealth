@@ -1,0 +1,23 @@
+@use '/src/styles/constants/colors';
+
+.chartContainer {
+  padding: 0 20px;
+}
+
+.description {
+  padding-left: 10px;
+  line-height: 1.3;
+  color: colors.$MYHEALTH_TEXT;
+
+  strong {
+    font-weight: 600;
+  }
+
+  .increased {
+    color: colors.$CHART_TEXT_BLUE;
+  }
+
+  .decreased {
+    color: colors.$CHART_TEXT_RED;
+  }
+}
