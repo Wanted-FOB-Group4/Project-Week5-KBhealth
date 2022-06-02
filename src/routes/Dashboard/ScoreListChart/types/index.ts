@@ -3,4 +3,5 @@ export interface IScoreList {
   score: number
   fill: string
   dotFill: string
+  labelFill: string
 }

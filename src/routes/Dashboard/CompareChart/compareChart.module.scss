@@ -47,11 +47,11 @@
     }
 
     .rowCase {
-      color: colors.$ROW_TEXT;
+      color: colors.$CHART_TEXT_RED;
     }
 
     .highCase {
-      color: colors.$HIGH_TEXT;
+      color: colors.$CHART_TEXT_BLUE;
     }
   }
 }
