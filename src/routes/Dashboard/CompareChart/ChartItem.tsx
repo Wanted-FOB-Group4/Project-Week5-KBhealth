@@ -5,8 +5,6 @@ import { getChartData } from './utils/getChartData'
 import { CHART_COLOR } from './constants/chartStyle'
 import { CHART_OBJ } from './constants/chartConstants'
 
-import styles from 'compareChart.module.scss'
-
 interface IChartItem {
   my: number
   compare: number
