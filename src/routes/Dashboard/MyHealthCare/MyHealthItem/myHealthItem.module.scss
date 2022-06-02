@@ -61,6 +61,7 @@
     @include flexbox.flexbox(center, center);
     padding: 8px 15px;
     margin-left: 10px;
+    font-size: 12px;
     font-weight: 500;
     color: colors.$MYHEALTH_TAGTEXT;
     background-color: colors.$MYHEALTH_TAG2;
@@ -84,7 +85,7 @@
   }
 
   li {
-    line-height: 18px;
+    line-height: 20px;
     color: colors.$MYHEALTH_TEXT;
     list-style: disc;
   }
