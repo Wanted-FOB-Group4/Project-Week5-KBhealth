@@ -1,0 +1,57 @@
+@use 'styles/constants/colors';
+@use 'styles/mixins/flexbox';
+
+.chartContainer {
+  @include flexbox.flexbox(center, center);
+  flex-direction: column;
+  width: 400px;
+  height: auto;
+
+  .cardWrapper {
+    padding: 0 20px;
+  }
+
+  .descriptionContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .articleHeader {
+    margin-bottom: 20px;
+    font-size: 22px;
+    font-weight: 650;
+    line-height: 150%;
+  }
+}
+
+.descriptionCard {
+  .msgColContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-weight: 500;
+    color: colors.$FONT_COLOR;
+
+    .highlight {
+      display: inline-block;
+      padding-bottom: 7px;
+      margin-top: 5px;
+      font-weight: 600;
+      line-height: 5px;
+      background-color: colors.$MARK_TEXT;
+    }
+
+    .msgText {
+      line-height: 130%;
+    }
+
+    .rowCase {
+      color: colors.$CHART_TEXT_RED;
+    }
+
+    .highCase {
+      color: colors.$CHART_TEXT_BLUE;
+    }
+  }
+}
