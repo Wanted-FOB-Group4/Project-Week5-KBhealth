@@ -9,17 +9,114 @@
 
 ## 실행 방법
 
+```
+$> npm i -f
+$> npm start
+```
+
 ## 폴더 구조
 
 ```
-아직 없
+src
+├── assets
+│   └── svgs
+│       ├── batteryIcon.svg
+│       ├── ic-icon-mission-h-1.svg
+│       ├── ic-icon-mission-h-2.svg
+│       ├── ic-icon-mission-h-3.svg
+│       ├── ic-icon-mission-h-4.svg
+│       ├── ic-icon-mission-h-5.svg
+│       ├── ic-icon-mission-h-6.svg
+│       ├── ic-icon-mission-h-7.svg
+│       ├── ic-icon-mission-h-8.svg
+│       ├── index.ts
+│       ├── notification.svg
+│       └── wifiIcon.svg
+├── components
+│   ├── Layout
+│   │   ├── LayoutHeader
+│   │   │   ├── index.tsx
+│   │   │   └── layoutHeader.module.scss
+│   │   ├── index.tsx
+│   │   └── layout.module.scss
+│   └── index.ts
+├── data
+│   └── health.json
+├── global.d.ts
+├── hooks
+│   ├── index.ts
+│   └── useParseMyHealthData.ts
+├── index.tsx
+├── react-app-env.d.ts
+├── reportWebVitals.ts
+├── routes
+│   ├── Dashboard
+│   │   ├── CompareChart
+│   │   │   ├── ChartItem.tsx
+│   │   │   ├── Description.tsx
+│   │   │   ├── compareChart.module.scss
+│   │   │   ├── constants
+│   │   │   │   ├── chartConstants.ts
+│   │   │   │   └── chartStyle.ts
+│   │   │   ├── index.tsx
+│   │   │   └── utils
+│   │   │       ├── getChartData.ts
+│   │   │       └── getDescriptionData.tsx
+│   │   ├── MyHealthCare
+│   │   │   ├── MyHealthItem
+│   │   │   │   ├── index.tsx
+│   │   │   │   └── myHealthItem.module.scss
+│   │   │   ├── index.tsx
+│   │   │   └── myHealthCare.module.scss
+│   │   ├── ScoreListChart
+│   │   │   ├── Description.tsx
+│   │   │   ├── chartStyle.ts
+│   │   │   ├── index.tsx
+│   │   │   ├── scoreListChart.module.scss
+│   │   │   ├── types
+│   │   │   │   └── index.ts
+│   │   │   └── utils
+│   │   │       └── getHealthScoreData.ts
+│   │   ├── UserHealthInfo
+│   │   │   ├── Score
+│   │   │   │   └── index.tsx
+│   │   │   ├── index.tsx
+│   │   │   └── userHealthInfo.module.scss
+│   │   └── index.tsx
+│   ├── Details
+│   │   ├── detail.module.scss
+│   │   └── index.tsx
+│   └── index.tsx
+├── services
+│   └── index.ts
+├── setupTests.ts
+├── states
+│   └── healthDataState.ts
+├── styles
+│   ├── base
+│   │   ├── _fonts.scss
+│   │   ├── _more.scss
+│   │   └── _reset.scss
+│   ├── constants
+│   │   ├── _colors.scss
+│   │   ├── _levels.scss
+│   │   └── _sizes.scss
+│   ├── index.scss
+│   ├── index.ts
+│   └── mixins
+│       ├── _animation.scss
+│       ├── _flexbox.scss
+│       └── _position.scss
+└── types
+    ├── myHealthData.d.ts
+    └── types.d.ts
 ```
 
 ## 구현 방법과 이유, 사용한 기술
 
 ### 맞춤 건강관리 컴포넌트
 
-- Recoil로 관리되는 `healthData`와 파싱된 데이터인 `myData`를 불러와서 `MyHealthCare` 안에서 렌더링해주는 구조입니다. 
+- Recoil로 관리되는 `healthData`와 파싱된 데이터인 `myData`를 불러와서 `MyHealthCare` 안에서 렌더링해주는 구조입니다.
 - 전체 렌더링 데이터 리스트를 `MyHealthList`로 미리 묶어 반환문의 가독성을 높였습니다.
 - 시멘틱 태그를 적절히 활용했습니다.
 
@@ -49,13 +146,13 @@
 
 - 개인 건강 점수를 베어 문 도넛 모양으로 표시하는 부분은 svg로 그려서 구현하였습니다.
 
-- dash array만 잘 설정하면 쉽게 구현할 수 있다고 생각하여서 svg로 만들었습니다. 
+- dash array만 잘 설정하면 쉽게 구현할 수 있다고 생각하여서 svg로 만들었습니다.
 
-### 회원 개인 건강 정보 
+### 회원 개인 건강 정보
 
 - 회원의 성별, 나이, 키 값을 JSON 데이터의 구조 분해를 통해 불러와 화면에 띄워주었습니다.
 
-- useNavigate hook을 사용하여 결과 자세히 보기 버튼 클릭 시 detail 페이지로 이동할 수 있게 구현하였습니다. 
+- useNavigate hook을 사용하여 결과 자세히 보기 버튼 클릭 시 detail 페이지로 이동할 수 있게 구현하였습니다.
 
 ### 연도별 건강 점수 비교 그래프
 
