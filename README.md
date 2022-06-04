@@ -3,7 +3,7 @@
   <img src="https://img.shields.io/badge/-Typescript-3178C6?style=flat-square&logo=TypeScript&logoColor=white"> <img src="https://img.shields.io/badge/-React-61DAFB?style=flat-square&logo=React&logoColor=white"> <img src="https://img.shields.io/badge/-Sass-CC6699?style=flat-square&logo=Sass&logoColor=white"> <img src="https://img.shields.io/badge/-React%20Query-FF4154?style=flat-square&logo=React%20Query&logoColor=white">
 </p>
 
-<h2 align="center"><a href="/">배포 페이지</a></h2>
+<h2 align="center"><a href="https://4team-kbhealth.netlify.app/">🚀 배포 페이지</a></h2>
 
 # 과제 설명
 
@@ -65,6 +65,14 @@
 
 - 점수 증감 여부, 연도 데이터 개수, 직전 연도 데이터의 유무 등 조건에 따라 설명 문구를 동적으로 생성해주는 컴포넌트를 만들어 과제 명세서에 주어진 모든 케이스에 대응할 수 있도록 구현했습니다. 특히, 조건별로 공통된 문구 형식을 파악하여 조건문을 남발하지 않고 최대한 간결하게 구현하기 위해 노력했습니다.
 
+
+### 나이대,10년 뒤 건강 점수 비교, 의료비 비교 그래프
+
+- 차트를 그려주는 컴포넌트인 `ChartItem`에 `Victory`라이브러리의 Bar, Line, Scatter, Axis를 사용하여 막대, 선, 점을 그려줬습니다.
+
+- 간략한 문구를 랜더링 해주는`Description` 컴포넌트를 이용해서 문구를 생성하도록 하였고 가독성을 위해서 `getDescriptionData()`에 `(my, other, type)`을 넣어서 실행하면 알맞는 element를 리턴해주도록 작성하였습니다.
+
+- 시멘틱한 마크업을 기본으로 두고 구현하기 위해 노력했습니다
 
 <hr />
 
