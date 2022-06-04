@@ -1,0 +1,128 @@
+@use 'styles/mixins/flexbox';
+@use 'styles/constants/colors';
+
+.myHealthItemWrapper {
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px 0 colors.$MYHEALTH_SHADOW;
+
+  div,
+  span,
+  p,
+  strong,
+  h3,
+  li,
+  h4 {
+    letter-spacing: 0.3px;
+  }
+}
+
+.myHealthItemTop {
+  margin-bottom: 30px;
+
+  .topIconSectionTop {
+    @include flexbox.flexbox(between, end);
+    margin-bottom: 10px;
+
+    span {
+      font-size: 30px;
+      font-style: italic;
+      font-weight: 700;
+    }
+  }
+
+  h3 {
+    margin-bottom: 10px;
+    font-size: 23px;
+    font-weight: 700;
+  }
+
+  .summaryTop {
+    margin-bottom: 20px;
+    line-height: 20px;
+    color: colors.$MYHEALTH_TEXT;
+
+    strong {
+      font-weight: 700;
+    }
+  }
+
+  .summaryBottom {
+    margin-bottom: 20px;
+    color: colors.$MYHEALTH_SUBTEXT;
+  }
+}
+
+.tagContainer {
+  @include flexbox.flexbox(start, center);
+
+  div {
+    @include flexbox.flexbox(center, center);
+    padding: 8px 15px;
+    margin-left: 10px;
+    font-size: 12px;
+    font-weight: 500;
+    color: colors.$MYHEALTH_TAGTEXT;
+    background-color: colors.$MYHEALTH_TAG2;
+    border-radius: 20px;
+  }
+
+  div:first-child {
+    margin-left: 0;
+    background-color: colors.$MYHEALTH_TAG1;
+  }
+}
+
+.myHealthItemBottom {
+  h4 {
+    margin: 30px 0 20px;
+    font-weight: 700;
+  }
+
+  ul {
+    padding: 0 20px;
+  }
+
+  li {
+    line-height: 20px;
+    color: colors.$MYHEALTH_TEXT;
+    list-style: disc;
+  }
+
+  li:not(&:last-child) {
+    margin-bottom: 12px;
+  }
+}
+
+.themeBMI {
+  color: colors.$THEME_BMI;
+}
+
+.themeBloodPressure {
+  color: colors.$THEME_BLOODPRESSURE;
+}
+
+.themeCholesterol {
+  color: colors.$THEME_CHOLESTEROL;
+}
+
+.themeSmoke {
+  color: colors.$THEME_SMOKE;
+}
+
+.themeBloodSugar {
+  color: colors.$THEME_BLOODSUGAR;
+}
+
+.themeGFR {
+  color: colors.$THEME_GFR;
+}
+
+.themeAlcohol {
+  color: colors.$THEME_ALCOHOL;
+}
+
+.themeExercise {
+  color: colors.$THEME_EXERCISE;
+}

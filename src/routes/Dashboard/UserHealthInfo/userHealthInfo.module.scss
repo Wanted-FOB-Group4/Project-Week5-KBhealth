@@ -1,0 +1,106 @@
+@use 'styles/constants/colors';
+@use 'styles/mixins/flexbox';
+
+.container {
+  @include flexbox.flexbox(start, center);
+  flex-direction: column;
+  width: 100%;
+  background-color: colors.$THEME_COLOR;
+}
+
+.title {
+  @include flexbox.flexbox(start, center);
+  width: 100%;
+  height: 60px;
+  padding: 0 20px;
+  font-weight: 700;
+}
+
+.main {
+  @include flexbox.flexbox(start, center);
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  background-color: colors.$WHITE;
+  border-radius: 20px 20px 0 0;
+
+  .checkDate {
+    margin-bottom: 20px;
+    color: colors.$DARKGRAY;
+  }
+
+  .updateResultBtn {
+    margin-bottom: 20px;
+    font-size: 15px;
+  }
+}
+
+.healthScore {
+  @include flexbox.flexbox(start, center);
+  width: 100%;
+  margin-bottom: 20px;
+
+  .scoreTitle {
+    margin-right: 20px;
+
+    strong {
+      font-weight: 700;
+    }
+  }
+
+  svg {
+    width: 25px;
+    fill: colors.$GRAY;
+  }
+}
+
+.userInfoBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 60px;
+  padding: 20px;
+  background-color: colors.$THEME_LIGHT;
+  border-radius: 10px;
+
+  .userInfoTitle {
+    font-weight: 700;
+  }
+
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
+
+    li {
+      flex: 1;
+      width: 100px;
+      margin-bottom: 0 !important;
+      text-align: center;
+
+      &:not(&:last-child) {
+        border-right: 2px solid colors.$DARKGRAY;
+      }
+    }
+  }
+}
+
+.resultBox {
+  flex-direction: row;
+  width: 100%;
+  padding: 10px;
+  @include flexbox.flexbox(between, center);
+
+  h3 {
+    margin: 10px 0;
+    font-weight: 700;
+  }
+
+  button {
+    font-size: 15px;
+    text-decoration: underline;
+  }
+}

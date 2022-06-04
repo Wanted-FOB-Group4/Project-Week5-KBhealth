@@ -1,0 +1,25 @@
+@use 'styles/mixins/flexbox';
+@use 'styles/constants/colors';
+
+.layoutBackground {
+  width: 100vw;
+  height: 100vh;
+  @include flexbox.flexbox(center, center);
+  background-color: colors.$LAYOUT_BG;
+}
+
+.layoutWrapper {
+  width: 420px;
+  height: 720px;
+  background-color: colors.$WHITE;
+  border: 3px solid colors.$LAYOUT_BORDER;
+}
+
+.layoutMain {
+  height: calc(100% - 30px);
+  overflow-y: scroll;
+
+  & > hr {
+    border: 3px solid colors.$LAYOUT_HR;
+  }
+}
